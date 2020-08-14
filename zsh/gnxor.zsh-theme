@@ -1,5 +1,4 @@
-# CHANGKUN ZSH THEME
-# hi@changkun.us
+# GNXOR ZSH THEME
 # Based on the great ys theme (http://ysmood.org/wp/2013/03/my-ys-terminal-theme/)
 
 # Machine name.
@@ -11,32 +10,32 @@ function box_name {
 local current_dir='${PWD/#$HOME/~}'
 
 # VCS
-CHANGKUN_PROMPT_PREFIX1="%{$fg[white]%}%{$fg[cyan]%}\uE0A0%{$reset_color%} "
-CHANGKUN_PROMPT_PREFIX2="%{$fg[cyan]%}"
-CHANGKUN_PROMPT_SUFFIX="%{$reset_color%}"
-CHANGKUN_PROMPT_DIRTY=" %{$fg[red]%}✖︎"
-CHANGKUN_PROMPT_CLEAN=" %{$fg[green]%}●"
+GNXOR_PROMPT_PREFIX1="%{$fg[white]%}%{$fg[cyan]%}\uE0A0%{$reset_color%} "
+GNXOR_PROMPT_PREFIX2="%{$fg[cyan]%}"
+GNXOR_PROMPT_SUFFIX="%{$reset_color%}"
+GNXOR_PROMPT_DIRTY=" %{$fg[red]%}✖︎"
+GNXOR_PROMPT_CLEAN=" %{$fg[green]%}●"
 
 # Git info.
 local git_info='$(git_prompt_info)'
-ZSH_THEME_GIT_PROMPT_PREFIX="${CHANGKUN_PROMPT_PREFIX1}${CHANGKUN_PROMPT_PREFIX2}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="$CHANGKUN_PROMPT_SUFFIX"
-ZSH_THEME_GIT_PROMPT_DIRTY="$CHANGKUN_PROMPT_DIRTY"
-ZSH_THEME_GIT_PROMPT_CLEAN="$CHANGKUN_PROMPT_CLEAN"
+ZSH_THEME_GIT_PROMPT_PREFIX="${GNXOR_PROMPT_PREFIX1}${GNXOR_PROMPT_PREFIX2}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="$GNXOR_PROMPT_SUFFIX"
+ZSH_THEME_GIT_PROMPT_DIRTY="$GNXOR_PROMPT_DIRTY"
+ZSH_THEME_GIT_PROMPT_CLEAN="$GNXOR_PROMPT_CLEAN"
 
 # HG info
-local hg_info='$(changkun_hg_prompt_info)'
-changkun_hg_prompt_info() {
+local hg_info='$(gnxor_hg_prompt_info)'
+gnxor_hg_prompt_info() {
 	# make sure this is a hg dir
 	if [ -d '.hg' ]; then
-		echo -n "${CHANGKUN_PROMPT_PREFIX1}hg${CHANGKUN_PROMPT_PREFIX2}"
+		echo -n "${GNXOR_PROMPT_PREFIX1}hg${GNXOR_PROMPT_PREFIX2}"
 		echo -n $(hg branch 2>/dev/null)
 		if [ -n "$(hg status 2>/dev/null)" ]; then
-			echo -n "$CHANGKUN_PROMPT_DIRTY"
+			echo -n "$GNXOR_PROMPT_DIRTY"
 		else
-			echo -n "$CHANGKUN_PROMPT_CLEAN"
+			echo -n "$GNXOR_PROMPT_CLEAN"
 		fi
-		echo -n "$CHANGKUN_PROMPT_SUFFIX"
+		echo -n "$GNXOR_PROMPT_SUFFIX"
 	fi
 }
 

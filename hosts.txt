@@ -4,4 +4,5 @@ http://ping.chinaz.com
 用于访问github
 151.101.109.194 github.global.ssl.fastly.net
 203.208.39.99 assets-cdn.github.com
+
 199.232.68.133 raw.githubusercontent.com // 这一条一般用于macOS
